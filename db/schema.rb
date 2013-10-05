@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131005162126) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: true do |t|
     t.text     "content"
     t.integer  "commentable_id"
@@ -23,9 +26,9 @@ ActiveRecord::Schema.define(version: 20131005162126) do
   end
 
   create_table "dreams", force: true do |t|
-    t.text     "content",    limit: 255
+    t.text     "content"
     t.integer  "user_id"
-    t.boolean  "shared",                 default: true
+    t.boolean  "shared",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 20131005162126) do
     t.datetime "updated_at"
   end
 
-  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
-  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows", using: :btree
 
   create_table "meanings", force: true do |t|
     t.text     "content"
@@ -50,17 +53,6 @@ ActiveRecord::Schema.define(version: 20131005162126) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "relationships", force: true do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -81,8 +73,8 @@ ActiveRecord::Schema.define(version: 20131005162126) do
     t.string   "location"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "votes", force: true do |t|
     t.integer  "votable_id"
@@ -95,7 +87,7 @@ ActiveRecord::Schema.define(version: 20131005162126) do
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
 end
