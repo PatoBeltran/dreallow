@@ -15,5 +15,7 @@ class Meaning < ActiveRecord::Base
   belongs_to :user
   belongs_to :dream
   
+  validates :content, presence: true
+
   default_scope order: 'meanings.created_at DESC'
 end

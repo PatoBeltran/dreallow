@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20131005050835) do
-||||||| parent of e1c0330... Implement comment module
-ActiveRecord::Schema.define(version: 20131005033027) do
-=======
-ActiveRecord::Schema.define(version: 20131005050934) do
+ActiveRecord::Schema.define(version: 20131005105357) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -25,7 +20,6 @@ ActiveRecord::Schema.define(version: 20131005050934) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
->>>>>>> e1c0330... Implement comment module
 
   create_table "dreams", force: true do |t|
     t.text     "content",    limit: 255
@@ -56,6 +50,17 @@ ActiveRecord::Schema.define(version: 20131005050934) do
     t.datetime "updated_at"
   end
 
+  create_table "relationships", force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -72,6 +77,7 @@ ActiveRecord::Schema.define(version: 20131005050934) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "location"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

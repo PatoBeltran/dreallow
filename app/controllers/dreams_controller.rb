@@ -33,6 +33,10 @@ class DreamsController < ApplicationController
     redirect_to dream_path(@dream)
   end
 
+  def random
+    @dream = Dream.first(:order => "RAND()")
+  end
+
   private
   def dream_params
     params.require(:dream).permit(:content, :shared)

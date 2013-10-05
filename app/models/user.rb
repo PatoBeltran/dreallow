@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.name = auth.info.name
       user.email = auth.info.email
+      user.location = auth.info.location
     end
   end
   def self.new_with_session(params, session)

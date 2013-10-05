@@ -3,7 +3,7 @@
         <%= dream.content %>
     </span>
     <span>
-      <%= link_to "Like", like_dream_path(dream, :method => :put) %>
+      <%= link_to "Like", like_dream_path(dream, method: :put) %>
     </span>
     <span>
         <%= link_to "delete", dream, method: :delete, data: {confirm: "Are you sure?"} %>
