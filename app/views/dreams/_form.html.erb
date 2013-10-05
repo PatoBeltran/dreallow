@@ -1,9 +1,11 @@
 <%= form_for(dream) do |f| %>
     <%= f.text_area :content, :placeholder => "Share your dreams..." %>
-    <div class="sharedBool">
-      <%= f.label "Public dream" %>
-      <%= f.check_box(:shared) %>
-    </div>
+    <% if current_user %>
+      <div class="sharedBool">
+        <%= f.label "Public dream" %>
+        <%= f.check_box(:shared) %>
+      </div>
+    <% end %>
     <%= f.submit "submit", class: "btn btn-small" %>
 <% end %>
 
