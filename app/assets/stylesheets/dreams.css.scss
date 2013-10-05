@@ -248,3 +248,20 @@ footer {
   width: 90%;
   margin: 6% auto;
 }
+.circle {
+  color: #333;
+  font-size:14px;
+  position: relative;
+  width: 18em;
+  height: 18em;
+  padding: 4% 2.5%;
+  margin: 1em;
+  border-radius: 50%;
+  background: #FFF;
+  float: left;
+  text-align: center;
+}
+.circContent {
+  height: 8em;
+  width: 13.5em;
+}

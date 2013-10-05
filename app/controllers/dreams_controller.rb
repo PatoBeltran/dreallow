@@ -42,7 +42,8 @@ class DreamsController < ApplicationController
   end
 
   def random
-    @dream = Dream.first(:order => "RAND()")
+    @dream = Dream.first(:order => "RANDOM()")
+    redirect_to dream_path(@dream)
   end
 
   private

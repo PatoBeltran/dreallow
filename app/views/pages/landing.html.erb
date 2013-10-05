@@ -31,19 +31,23 @@
       <div class="wrapper">
         <h2>See what people are dreaming right this moment</h2>
         <% @trending.each do |trend| %>
-          <div>
-            <%= trend.content %> <br />
+          <div class="circle">
+            <div class="circContent">
+              <%= trend.content %> <br />
+            </div>
+            <div class="userAndLoc">
             <%= time_ago_in_words(trend.created_at) %> <br />
             <% if trend.user %>
-              <%= trend.user.name %>, <% trend.user.location # %>
+              <strong><%= trend.user.name %>, <%= trend.user.location  %></strong>
             <% else %>
-              Anonymous, Anonymous
+              <strong><%=  "Anonymous, Anonymous" %></strong>
             <% end %>
+            </div>
           </div>
         <% end %>
       </div>
-    </div><!-- page_container -->
-  </section>
+  </div>
+</section>
 </div><!--main -->
 <footer>
   <a class="back" href="http://www.facebook.com/dreallow">Team Dreallow</a>

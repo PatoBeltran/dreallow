@@ -15,7 +15,7 @@ class Dream < ActiveRecord::Base
   belongs_to :user
   has_many :meanings
 
-  validates :content, precence: true
+  validates :content, presence: true
 
   acts_as_votable
 

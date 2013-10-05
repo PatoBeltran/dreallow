@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def likes
-
-    @user = current_user
+    @user = User.find(params[:user_id])
 
     arr = Array.new
     Dream.all.each do |dream|
@@ -13,10 +12,6 @@ class UsersController < ApplicationController
         arr.push(dream)
       end
     end
-
-
-    #TODO
-    #necesita redirijir solo sus likes
-    redirect_to dreams_path
+    redirect_to dreams_path(arr)
   end
 end

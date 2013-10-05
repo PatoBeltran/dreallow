@@ -1,10 +1,13 @@
 Dreallow::Application.routes.draw do
 
-  #get "comments/create"
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  resources :users do
+    get "likes", to: "users#likes"
+  end
 
-  get "random", to: "dream#random"
+  get "dream/random", to: "dreams#random"
   resources :dreams do
+
     member do
       put "like", to: "dreams#upvote"
       get "like", to: "dreams#upvote"
