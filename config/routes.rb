@@ -1,12 +1,16 @@
 Dreallow::Application.routes.draw do
 
+  get "comments/create"
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :dreams do
-    resources :meanings
     member do
       put "like", to: "dreams#upvote"
       get "like", to: "dreams#upvote"
+    end
+    resources :comments
+    resources :meanings do
+      resources :comments
     end
   end
 
@@ -52,7 +56,7 @@ Dreallow::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

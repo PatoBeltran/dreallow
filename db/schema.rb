@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20131005050835) do
+||||||| parent of e1c0330... Implement comment module
+ActiveRecord::Schema.define(version: 20131005033027) do
+=======
+ActiveRecord::Schema.define(version: 20131005050934) do
+
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+>>>>>>> e1c0330... Implement comment module
 
   create_table "dreams", force: true do |t|
     t.text     "content",    limit: 255

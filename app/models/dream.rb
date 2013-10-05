@@ -11,6 +11,7 @@
 #
 
 class Dream < ActiveRecord::Base
+  has_many :comments, as: :commentable
   belongs_to :user
   has_many :meanings
 
