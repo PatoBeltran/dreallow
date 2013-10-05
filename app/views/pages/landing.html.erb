@@ -31,23 +31,25 @@
       <div class="wrapper">
         <h2>See what people are dreaming right this moment</h2>
         <% @trending.each do |trend| %>
+          <%= link_to dream_path(Dream.find(trend.id)) do %>
           <div class="circle">
-            <div class="circContent">
-              <%= trend.content %> <br />
-            </div>
-            <div class="userAndLoc">
+          <div class="circContent">
+            <%= truncate(trend.content, length: 80) %> <br />
+          </div>
+        <% end %>
+          <div class="userAndLoc">
             <%= time_ago_in_words(trend.created_at) %> <br />
             <% if trend.user %>
               <strong><%= trend.user.name %>, <%= trend.user.location  %></strong>
-            <% else %>
+          <% else %>
               <strong><%=  "Anonymous, Anonymous" %></strong>
-            <% end %>
-            </div>
+          <% end %>
           </div>
-        <% end %>
+        </div>
+      <% end %>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 </div><!--main -->
 <footer>
   <a class="back" href="http://www.facebook.com/dreallow">Team Dreallow</a>
