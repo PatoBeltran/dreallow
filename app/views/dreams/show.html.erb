@@ -1,9 +1,14 @@
 <%= @dream.content %>
 <div id="js-meanings">
-  <% unless current_user %>
-    <%= link_to "Add Meaning", new_user_session_path %>
-  <% else %>
+  <% if current_user %>
     <%= link_to "Add Meaning", [:new, @dream, :meaning], id: "js-new-meaning-link", remote: true %>
   <% end %>
   <%= render @meanings %>
+</div
+
+<div id="js-comments">
+  <% if current_user %>
+    <%= link_to "Add Comment", [:new, @dream, :comment], id: "js-new-comment-link", remote: true %>
+  <% end %>
+  <%= render @comments %>
 </div

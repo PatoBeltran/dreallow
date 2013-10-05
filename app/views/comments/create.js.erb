@@ -1,0 +1,3 @@
+$('#js-new-comment').remove();
+$('#js-new-comment-link').show();
+$('#js-new-comment-link').after('<%= j render('comment', comment: @comment, dream: @commentable ) %>');

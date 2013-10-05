@@ -2,16 +2,12 @@ class CommentsController < ApplicationController
 
   before_filter :find_commentable
 
-  def index
-    @comments = @commentable.comments
-  end
-
   def new
     @comment = @commentable.comments.new
   end
 
   def create
-    @comment = @commentable.comments.new(comments_params)
+    @comment = @commentable.comments.new(content: params[:comment][:content], user_id: current_user.id)
     if @comment.save
       redirect_to @commentable_father.blank? ? @commentable : @commentable_father, notice: "Comment created."
     else
@@ -36,7 +32,7 @@ class CommentsController < ApplicationController
   end
 
   def comments_params
-    params.require(:comment).permit(:content, :commentable_id, :commentable_type)
+    params.require(:comment).permit(:user_id, :content, :commentable_id, :commentable_type)
   end
 
 end

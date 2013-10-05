@@ -11,6 +11,7 @@ class DreamsController < ApplicationController
   def show
     @dream = Dream.find(params[:id])
     @meanings = @dream.meanings
+    @comments = @dream.comments
   end
 
   def create
