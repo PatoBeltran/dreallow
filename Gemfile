@@ -4,21 +4,13 @@ gem "acts_as_follower"
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'annotate'
-gem 'furatto'
 gem 'acts_as_votable'
-
-group :assets do
-    gem 'compass-rails'
-end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -54,3 +46,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'sass-rails',    '~> 4.0.0'

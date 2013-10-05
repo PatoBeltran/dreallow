@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dreallow</title>
+  <title>Dreallow - Share your dreams</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <header>
     <% if user_signed_in? %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
     <% end %>
   </header>
 <%= yield %>

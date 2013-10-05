@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:IcaliaLabs/furatto-rails.git
+  revision: daeea20faf8131e63d87f46e279b6fdf6d2dc2e1
+  specs:
+    furatto (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,7 +51,7 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.3)
+    compass-rails (2.0.alpha.0)
       compass (>= 0.12.2, < 0.14)
     devise (3.1.0)
       bcrypt-ruby (~> 3.0)
@@ -58,7 +64,6 @@ GEM
     faraday (0.8.7)
       multipart-post (~> 1.1)
     fssm (0.2.10)
-    furatto (0.0.2)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -156,9 +161,9 @@ DEPENDENCIES
   acts_as_votable
   annotate
   coffee-rails (~> 4.0.0)
-  compass-rails
+  compass-rails (~> 2.0.alpha.0)
   devise
-  furatto
+  furatto!
   jbuilder (~> 1.2)
   jquery-rails
   omniauth-facebook

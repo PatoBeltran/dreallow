@@ -14,9 +14,17 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @dream = current_user.dreams.build(dream_params)
+    if current_user
+      @dream = current_user.dreams.build(dream_params)
+    else
+      @dream = Dream.new(dream_params)
+    end
     if @dream.save
-      redirect_to dreams_path, flash: { notice: "Dream successfully created" }
+      if current_user.present?
+        redirect_to dreams_path, flash: { notice: "Dream successfully created" }
+      else
+        redirect_to root_path
+      end
     else
       render "new"
     end

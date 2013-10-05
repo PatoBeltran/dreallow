@@ -1,3 +1,39 @@
-<h1>Pages#landing</h1>
-<p>Find me in app/views/pages/landing.html.erb</p>
-
+<div class="main">
+  <section class="page1">
+    <div class="page_container">
+      <div class="logo_container">
+        <%= image_tag "logo.png", class:"logo" %>
+        <h2 class="slogan">Share your dreamzZz...</h2>
+      </div>
+      <div class="btns">
+        <form class="">
+          <fieldset class="login">
+            <legend>The dream realm is nigh</legend>
+            <%= link_to user_omniauth_authorize_path(:facebook),  class: "btn btn-info btn-large loginbtn" do %>
+              Sign in with <strong>[Facebook]</strong>
+          <% end %>
+          </fieldset>
+        </form>
+      </div><!-- btns -->
+      <div class="dream_enter">
+        <%=  render '/dreams/form', dream: Dream.new %>
+      </div>
+    </div><!--page container -->
+  </section>
+  <div class="clouds">
+    <div class="cloud-1" data-speed="35000"></div>
+    <div class="cloud-2" data-speed="45000" data-delay="15000"></div>
+    <div class="cloud-3" data-speed="40000"></div>
+    <div class="cloud-4" data-speed="38000" data-delay="20000"></div>
+  </div>
+  <section id="dreams" class="page2">
+    <div class="page_container">
+      <div class="wrapper">
+        <h2>See what people are dreaming right this moment</h2>
+      </div>
+    </div><!-- page_container -->
+  </section>
+</div><!--main -->
+<footer>
+  <a class="back" href="http://www.facebook.com/dreallow">Team Dreallow</a>
+</footer>

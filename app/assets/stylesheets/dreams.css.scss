@@ -1,3 +1,250 @@
 // Place all the styles related to the dreams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  margin: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 400ms;
+  -moz-transition: opacity 400ms;
+  transition: opacity 400ms;
+  font-family: 'open sans';
+  -webkit-font-smoothing: antialiased;
+  background: #87CEFA !important;
+
+}
+.alert {
+  background: none !important;
+}
+body, .onepage-wrapper, html {
+  display: block;
+  position: static;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 0;
+  -webkit-transform-style: preserve-3d;
+}
+
+.onepage-wrapper .section {
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-pagination {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.onepage-pagination li {
+  padding: 0;
+  text-align: center;
+}
+.onepage-pagination li a{
+  padding: 10px;
+  width: 4px;
+  height: 4px;
+  display: block;
+  
+}
+.onepage-pagination li a:before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.onepage-pagination li a.active:before{
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: 1px solid black;
+  margin-top: -4px;
+  left: 8px;
+}
+.login {
+  width: 430px;
+  height: 80px;
+}
+
+.clouds {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+[class^="cloud-"] {
+	position: absolute;
+	right: 120%;
+	width: 200px;
+  height: 60px;
+	background: #fff;
+	-webkit-border-radius: 200px;
+	        border-radius: 200px;
+}
+
+[class^="cloud-"]:before,
+[class^="cloud-"]:after {
+	content: '';
+	position: absolute;
+  top: -15px;
+  left: 10px; 
+	width: 100px;
+  height: 80px;
+	background: #fff;
+  -webkit-border-radius: 100px;
+	        border-radius: 100px;
+	-webkit-transform: rotate(30deg);
+     -moz-transform: rotate(30deg);
+	        transform: rotate(30deg);
+}
+
+[class^="cloud-"]:after {
+  top: -55px;
+  left: auto;
+  right: 15px;
+	width: 120px;
+  height: 120px;
+}
+
+.cloud-1 {
+	top: 50px;
+	-webkit-animation: moveclouds 30s linear infinite;
+	   -moz-animation: moveclouds 30s linear infinite;
+	     -o-animation: moveclouds 30s linear infinite;
+	        animation: moveclouds 30s linear infinite;
+}
+
+.cloud-2 {
+	top: 100px;
+  opacity: 0.8;
+  -webkit-transform: scale(0.8);
+	   -moz-transform: scale(0.8);
+	        transform: scale(0.8);
+	-webkit-animation: moveclouds 45s linear infinite;
+	   -moz-animation: moveclouds 45s linear infinite;
+	     -o-animation: moveclouds 45s linear infinite;
+	     	  animation: moveclouds 45s linear infinite;
+	-webkit-animation-delay: 5s;
+     -moz-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.cloud-3 {
+	top: 150px;
+  opacity: 0.6;
+  -webkit-transform: scale(0.6);
+	   -moz-transform: scale(0.6);
+	        transform: scale(0.6);
+	-webkit-animation: moveclouds 40s linear infinite;
+	   -moz-animation: moveclouds 40s linear infinite;
+	     -o-animation: moveclouds 40s linear infinite;
+	        animation: moveclouds 40s linear infinite;
+}
+
+.cloud-4 {
+	top: 200px;
+  opacity: 0.75;
+  -webkit-transform: scale(0.75);
+	   -moz-transform: scale(0.75);
+	        transform: scale(0.75);
+	-webkit-animation: moveclouds 26s linear infinite;
+	   -moz-animation: moveclouds 26s linear infinite;
+	     -o-animation: moveclouds 26s linear infinite;
+	        animation: moveclouds 26s linear infinite;
+	-webkit-animation-delay: 8s;
+     -moz-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+@-webkit-keyframes moveclouds {
+	0%   { right: -20%; }
+	100% { right: 120%; }
+}
+@-moz-keyframes moveclouds {
+	0%   { right: -20%; }
+	100% { right: 120%; }
+}
+@-o-keyframes moveclouds {
+	0%   { right: -20%; }
+	100% { right: 120%; }
+}
+.logo_container {
+  margin-left: 12%;
+  margin-top: 10%;
+}
+.slogan {
+  margin-top:-30px;
+  margin-left: 2em;
+}
+.login {
+  border: 2px solid #000;
+  margin-left: 12%;
+  margin-top: 5%;
+}
+.loginbtn {
+  margin: auto !important;
+  margin-left: 18% !important;
+}
+.clouds {
+  z-index: -10 !important;
+}
+.dream_enter {
+  position: absolute;
+  left: 55%;
+  top: 20%;
+}
+.dream_enter textarea {
+  border: 0px;
+  outline: none;
+  resize: none;
+  border-radius: 5px;
+  position: fixed;
+  z-index: auto;
+  width: 500px;
+  height: 250px;
+}
+.dream_enter input[type="submit"]{
+  margin-top: -30%;
+  margin-left: 520%;
+}
+#dream_shared {
+  border: none;
+  border: 1 none transparent;
+  margin-top: 315%;
+  box-shadow: none;
+}
+.dream_enter label {
+  position: absolute;
+  top: 82%;
+  width: 150px;
+  left: 20%;
+}
+.back {
+
+}
+footer {
+  width: 100%;
+  background: #c3c3c3;
+  z-index: 100;
+}
+.wrapper {
+  width: 90%;
+  margin: 6% auto;
+}
