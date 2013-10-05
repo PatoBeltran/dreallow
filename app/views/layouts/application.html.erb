@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dreallow - Share your dreams</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<title>Dreallow - Share your dreams</title>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <% if user_signed_in? %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% end %>
-  </header>
+<% if user_signed_in? %>
+  <header class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="#menu" class="menu-trigger meteocon" data-meteocon="M" data-toggle="panel" data-target="#menu"></a>
+      <div class="nav-collapse collapse">
+        <nav id="menu">
+          <ul class="nav">
+            <li><%= link_to (image_tag('logo-small.png')), root_path, class: "brand"  %></li>
+            <li><%= link_to "Random", dream_random_path %></li>
+            <li class= "pull-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          </ul>
+          <!-- <form action="" method="get" accept-charset="utf-8" class="navbar-form pull-right search-navbar-form">
+            <div class="form-fields">
+              <input type="text" name="" id="" value="" placeholder="Search" class="">
+            </div>
+            <input type="submit" name="" id="" value="Search" class="btn btn-info">
+          </form>-->
+        </nav>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</header>
+
 <%= yield %>
 
 </body>

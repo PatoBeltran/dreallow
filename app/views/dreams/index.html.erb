@@ -1,6 +1,24 @@
-<% @dreams.each do |dream| %>
-    <% if dream.shared %>
-        <%= render "dream", dream: dream %>
+<div class="wrapper">
+  <div class="enter_dream" >
+    <%=  render '/dreams/form', dream: Dream.new %>
+  </div>
+  <div class="clearfix listOfDreams">
+    <% @dreams.each do |dreame| %>
+      <% if dreame.shared %>
+        <div class="circle">
+          <div class="circContent">
+            <%= render "dream", dream: dreame %>
+            </div>
+            <div class="userAndLoc">
+            <%= time_ago_in_words(dreame.created_at) %> <br />
+            <% if dreame.user %>
+              <strong><%= dreame.user.name %>, <%= dreame.user.location  %></strong>
+            <% else %>
+              <strong><%=  "Anonymous, Anonymous" %></strong>
+            <% end %>
+            </div>
+          </div>
+              <% end %>
     <% end %>
-<% end %>
-<%= link_to "Random", dream_random_path %>
+  </div>
+</div>

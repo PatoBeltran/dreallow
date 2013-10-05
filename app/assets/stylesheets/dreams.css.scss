@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body, html {
   margin: 0;
-  overflow: hidden;
   -webkit-transition: opacity 400ms;
   -moz-transition: opacity 400ms;
   transition: opacity 400ms;
@@ -17,7 +16,6 @@ body, html {
 }
 body, .onepage-wrapper, html {
   display: block;
-  position: static;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -27,7 +25,6 @@ body, .onepage-wrapper, html {
   width: 100%;
   height: 100%;
   display: block;
-  position: relative;
   padding: 0;
   -webkit-transform-style: preserve-3d;
 }
@@ -205,39 +202,33 @@ body, .onepage-wrapper, html {
 .clouds {
   z-index: -10 !important;
 }
+.btns {
+  float: left;
+  margin-left: 10%;
+}
 .dream_enter {
-  position: absolute;
-  left: 55%;
-  top: 20%;
+ width: 40%;
+ height: 200px;
+ margin-top: -27%;
+ margin-right: 5%;
+ clear: both;
+ float: right;
 }
 .dream_enter textarea {
   border: 0px;
   outline: none;
   resize: none;
   border-radius: 5px;
-  position: fixed;
   z-index: auto;
-  width: 500px;
-  height: 250px;
+  width: 100%;
+  height: 150px;
 }
 .dream_enter input[type="submit"]{
-  margin-top: -30%;
-  margin-left: 520%;
+  float: right;
 }
-#dream_shared {
-  border: none;
-  border: 1 none transparent;
-  margin-top: 315%;
-  box-shadow: none;
-}
-.dream_enter label {
-  position: absolute;
-  top: 82%;
-  width: 150px;
-  left: 20%;
-}
-.back {
 
+.dream_enter label {
+  width: 150px;
 }
 footer {
   width: 100%;
@@ -264,4 +255,46 @@ footer {
 .circContent {
   height: 8em;
   width: 13.5em;
+}
+#menu .nav .brand {
+  padding: 0;
+}
+
+.enter_dream {
+ width: 100%;
+ height: 200px;
+ clear: both;
+}
+.enter_dream textarea {
+  border: 0px;
+  outline: none;
+  resize: none;
+  border-radius: 5px;
+  z-index: auto;
+  width: 100%;
+  height: 150px;
+}
+.enter_dream input[type="submit"]{
+  float: right;
+}
+
+.enter_dream label {
+  width: 150px;
+}
+.listOFDreams {
+  
+}
+.wraper-plus {
+  width: 80%;
+}
+.sharedBool label {
+  float: left;
+}
+.sharedBool input {
+  clear: both;
+}
+.sharedBool {
+  float: left;
+  margin: .5em;
+  margin-right: auto;
 }
