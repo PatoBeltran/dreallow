@@ -1,0 +1,5 @@
+<% @dreams.each do |dream| %>
+    <% if dream.shared %>
+        <%= render "dream", dream: dream %>
+    <% end %>
+<% end %>
