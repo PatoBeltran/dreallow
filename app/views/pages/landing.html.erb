@@ -40,7 +40,7 @@
           <div class="userAndLoc">
             <%= time_ago_in_words(trend.created_at) %> <br />
             <% if trend.user %>
-              <strong><%= trend.user.name %>, <%= trend.user.location  %></strong>
+              <!--<strong><%= trend.user.name.split(' ')[0] + " " + trend.user.name.split(' ')[1] %>, <%= trend.user.location.split(',').join.split(' ')[0]%></strong>-->
           <% else %>
               <strong><%=  "Anonymous, Anonymous" %></strong>
           <% end %>
