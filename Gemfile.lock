@@ -26,6 +26,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     acts_as_follower (0.2.0)
+    acts_as_votable (0.7.1)
     annotate (2.5.0)
       rake
     arel (4.0.0)
@@ -152,6 +153,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_follower
+  acts_as_votable
   annotate
   coffee-rails (~> 4.0.0)
   compass-rails

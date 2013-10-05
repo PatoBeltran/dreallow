@@ -27,9 +27,14 @@ class DreamsController < ApplicationController
     redirect_to dreams_path, flash: { notice: "Dream successfully deleted" }
   end
 
+  def upvote
+    @dream = Dream.find(params[:id])
+    @dream.liked_by current_user
+    redirect_to dream_path(@dream)
+  end
+
   private
   def dream_params
     params.require(:dream).permit(:content, :shared)
   end
-
 end

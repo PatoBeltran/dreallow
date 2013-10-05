@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
   has_many :dreams
   has_many :meanings
 
+  acts_as_voter
+
   devise :database_authenticatable, :omniauthable,
     :rememberable, :trackable, :validatable
 

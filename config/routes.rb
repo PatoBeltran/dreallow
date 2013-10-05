@@ -4,6 +4,10 @@ Dreallow::Application.routes.draw do
 
   resources :dreams do
     resources :meanings
+    member do
+      put "like", to: "dreams#upvote"
+      get "like", to: "dreams#upvote"
+    end
   end
 
   root :to => "pages#landing"

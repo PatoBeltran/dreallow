@@ -5,6 +5,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'annotate'
 gem 'furatto'
+gem 'acts_as_votable'
 
 group :assets do
     gem 'compass-rails'
