@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'annotate'
+gem 'furatto'
+
+group :assets do
+    gem 'compass-rails'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
