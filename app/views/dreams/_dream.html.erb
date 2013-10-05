@@ -1,14 +1,5 @@
-<div>
-    <span>
-        <%= dream.content %>
-    </span>
-    <span>
-      <%= link_to "Like", like_dream_path(dream, method: :put) %>
-    </span>
-    <% if (current_user == dream.user) %>
-      <span>
-          <%= link_to "delete", dream, method: :delete, data: {confirm: "Are you sure?"} %>
-        </span>
-    <% end %>
+<div class="circContent">
+  <span>
+    <%= truncate(dream.content, length: 80)%>
+  </span> 
 </div>
-

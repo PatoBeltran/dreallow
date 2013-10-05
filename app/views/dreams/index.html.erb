@@ -5,20 +5,30 @@
   <div class="clearfix listOfDreams">
     <% @dreams.each do |dreame| %>
       <% if dreame.shared %>
-        <div class="circle">
-          <div class="circContent">
-            <%= render "dream", dream: dreame %>
-            </div>
-            <div class="userAndLoc">
-            <%= time_ago_in_words(dreame.created_at) %> <br />
-            <% if dreame.user %>
-              <strong><%= dreame.user.name %>, <%= dreame.user.location  %></strong>
-            <% else %>
-              <strong><%=  "Anonymous, Anonymous" %></strong>
-            <% end %>
-            </div>
-          </div>
-              <% end %>
-    <% end %>
+      <%= link_to dream_path(Dream.find(dreame.id)) do %>
+      <div class="circle">
+      <div class="circContent">
+        <%= render "dream", dream: dreame %>
+      </div>
+      <div class="userAndLoc">
+        <%= time_ago_in_words(dreame.created_at) %> <br />
+        <% if dreame.user %>
+          <strong><%= dreame.user.name %>, <%= dreame.user.location  %></strong>
+      <% else %>
+          <strong><%=  "Anonymous, Anonymous" %></strong>
+      <% end %>
+        <span>
+          <%= link_to "Like", like_dream_path(dreame, method: :put) %>
+        </span>
+        <% if (current_user == dreame.user) %>
+          <span>
+          <%= link_to "delete", dreame, method: :delete, data: {confirm: "Are you sure?"} %>
+        </span>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+  <% end %>
   </div>
 </div>

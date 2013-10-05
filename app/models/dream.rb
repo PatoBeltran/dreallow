@@ -19,4 +19,5 @@ class Dream < ActiveRecord::Base
 
   acts_as_votable
 
+  default_scope order: 'dreams.created_at DESC'
 end
