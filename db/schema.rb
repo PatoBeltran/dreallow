@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131005010008) do
+ActiveRecord::Schema.define(version: 20131005021021) do
 
   create_table "dreams", force: true do |t|
-    t.string   "content"
+    t.text     "content",    limit: 255
     t.integer  "user_id"
-    t.boolean  "shared",     default: true
+    t.boolean  "shared",                 default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
