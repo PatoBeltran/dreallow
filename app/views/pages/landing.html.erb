@@ -30,6 +30,17 @@
     <div class="page_container">
       <div class="wrapper">
         <h2>See what people are dreaming right this moment</h2>
+        <% @trending.each do |trend| %>
+          <div>
+            <%= trend.content %> <br />
+            <%= time_ago_in_words(trend.created_at) %> <br />
+            <% if trend.user %>
+              <%= trend.user.name %>, <% trend.user.location # %>
+            <% else %>
+              Anonymous, Anonymous
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div><!-- page_container -->
   </section>
