@@ -1,8 +1,8 @@
 <div class="comment">
-  <span>
+  <textarea id="comment" readonly>
     <%= comment.user.name %>
-  </span>
-  <span>
+  </textarea>
+  <p id="user">
     <%= simple_format comment.content %>
-  </span>
+    </p>
 </div>

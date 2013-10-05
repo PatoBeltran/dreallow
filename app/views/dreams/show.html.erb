@@ -1,14 +1,37 @@
-<%= @dream.content %>
-<div id="js-meanings">
-  <% if current_user %>
-    <%= link_to "Add Meaning", [:new, @dream, :meaning], id: "js-new-meaning-link", remote: true %>
-  <% end %>
-  <%= render @meanings %>
-</div
+<div id="wrap">
+  <div id="header">
+    <%= image_tag("Dreallow_cover.jpg", alt: "FB cover", width: 813) %>
+  </div>
+  <div id="content">
+    <h2 center>What did you just dream?    </h2>
 
-<div id="js-comments">
-  <% if current_user %>
-    <%= link_to "Add Comment", [:new, @dream, :comment], id: "js-new-comment-link", remote: true %>
-  <% end %>
-  <%= render @comments %>
-</div
+    <%= @dream.content %>
+    <div id="js-meanings">
+      <% if current_user %>
+        <%= link_to "Add Meaning", [:new, @dream, :meaning], id: "js-new-meaning-link", remote: true %>
+    <% end %>
+      <%= render @meanings %>
+    </div>
+
+    <div id="js-comments">
+      <% if current_user %>
+        <%= link_to "Add Comment", [:new, @dream, :comment], id: "js-new-comment-link", remote: true %>
+    <% end %>
+      <%= render @comments %>
+    </div>
+
+
+    <div id="divider"></div>
+
+    <div id="bottom">
+
+      <div id="bottomleft"></div>
+
+      <div id="footer">Join the team for more fun on <a href="http://www.facebook.com/dreallow">Facebook | Dreallow</a><a href="#"></a>. </div>
+
+    </div>
+  </div>
+
+</div>
+
+
