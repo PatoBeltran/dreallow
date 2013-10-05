@@ -22,6 +22,8 @@
 
 class User < ActiveRecord::Base
 
+  acts_as_followable
+  acts_as_follower
   has_many :dreams
   has_many :meanings
 

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "acts_as_follower"
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'annotate'
