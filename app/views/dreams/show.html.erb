@@ -1,2 +1,9 @@
-<h1>Dreams#show</h1>
-<p>Find me in app/views/dreams/show.html.erb</p>
+<%= @dream.content %>
+<div id="js-meanings">
+  <% unless current_user %>
+    <%= link_to "Add Meaning", new_user_session_path %>
+  <% else %>
+    <%= link_to "Add Meaning", [:new, @dream, :meaning], id: "js-new-meaning-link", remote: true %>
+  <% end %>
+  <%= render @meanings %>
+</div

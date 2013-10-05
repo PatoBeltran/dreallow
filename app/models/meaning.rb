@@ -1,16 +1,18 @@
 # == Schema Information
 #
-# Table name: dreams
+# Table name: meanings
 #
 #  id         :integer          not null, primary key
-#  content    :text(255)
+#  content    :text
 #  user_id    :integer
-#  shared     :boolean          default(TRUE)
+#  dream_id   :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-class Dream < ActiveRecord::Base
+class Meaning < ActiveRecord::Base
   belongs_to :user
-  has_many :meanings
+  belongs_to :dream
+  
+  default_scope order: 'meanings.created_at DESC'
 end

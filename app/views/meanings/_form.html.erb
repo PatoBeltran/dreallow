@@ -1,0 +1,14 @@
+<div id="js-new-meaning" >
+  <%= form_for [@commentable, @meaning], remote: true do |f| %>
+    <% if @meaning.errors.any? %>
+      <h2> Please correct the following errors.</h2>
+    <% end %>
+    <ul>
+      <% @meaning.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <%= f.text_area :content %>
+    <%= f.submit %>
+  <% end %>
+</div>

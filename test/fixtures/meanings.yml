@@ -1,11 +1,11 @@
 # == Schema Information
 #
-# Table name: dreams
+# Table name: meanings
 #
 #  id         :integer          not null, primary key
-#  content    :text(255)
+#  content    :text
 #  user_id    :integer
-#  shared     :boolean          default(TRUE)
+#  dream_id   :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -13,11 +13,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  content: MyString
+  content: MyText
   user_id: 1
-  annonymous: false
+  dream_id: 1
 
 two:
-  content: MyString
+  content: MyText
   user_id: 1
-  annonymous: false
+  dream_id: 1

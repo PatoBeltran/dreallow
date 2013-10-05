@@ -1,0 +1,3 @@
+$('#js-new-meaning').remove();
+$('#js-new-meaning-link').show();
+$('#js-new-meaning-link').after('<%= j render('meaning', meaning: @meaning, dream: @commentable ) %>');

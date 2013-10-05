@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131005021021) do
+ActiveRecord::Schema.define(version: 20131005024028) do
 
   create_table "dreams", force: true do |t|
     t.text     "content",    limit: 255
@@ -20,9 +20,14 @@ ActiveRecord::Schema.define(version: 20131005021021) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-end
 
-ActiveRecord::Schema.define(version: 20131004234554) do
+  create_table "meanings", force: true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "dream_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

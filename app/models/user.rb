@@ -17,15 +17,17 @@
 #  updated_at             :datetime
 #  provider               :string(255)
 #  uid                    :string(255)
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base
 
   has_many :dreams
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :meanings
+
   devise :database_authenticatable, :omniauthable,
     :rememberable, :trackable, :validatable
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
